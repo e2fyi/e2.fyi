@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "e2fyi-185012"
+  },
+  "targets": {
+    "e2fyi-185012": {
+      "hosting": {
+        "api.e2.fyi": [
+          "api-e2fyi"
+        ]
+      }
+    }
+  }
+}
