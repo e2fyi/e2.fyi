@@ -1,7 +1,7 @@
 {
-  "appAssociation": "AUTO",
   "hosting": [
     {
+      "appAssociation": "AUTO",
       "site": "e2fyi-185012",
       "public": "build",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
@@ -39,6 +39,7 @@
       ]
     },
     {
+      "appAssociation": "AUTO",
       "target": "api.e2.fyi",
       "public": "public",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
@@ -47,6 +48,10 @@
         {
           "source": "/vega",
           "function": "vegaLink"
+        },
+        {
+          "source": "/to/**",
+          "dynamicLinks": true
         }
       ],
 
