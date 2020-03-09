@@ -3,6 +3,7 @@ const SET_MSG = "SET_MSG";
 const SET_HAS_UPDATES = "SET_HAS_UPDATES";
 const OPEN_DRAWER = "OPEN_DRAWER";
 
+
 export interface appState {
   msg?: string;
   error?: Error | string;

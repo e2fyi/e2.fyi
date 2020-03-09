@@ -1,9 +1,8 @@
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import CardActions from "@material-ui/core/CardActions";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import Button from "@material-ui/core/Button";
+import Box from "@material-ui/core/Box";
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
@@ -44,9 +43,9 @@ const useStyles = makeStyles(theme =>
       paddingLeft: theme.spacing(1),
       paddingBottom: theme.spacing(1)
     },
-    playIcon: {
-      height: 38,
-      width: 38
+    linkIcon: {
+      height: 15,
+      width: 15
     }
   })
 );
@@ -59,6 +58,8 @@ export default function MediaCard({
   pathname
 }: MediaCardProps) {
   const classes = useStyles();
+  const link = `${window.location.origin}${pathname}`;
+
   return (
     <Card className={classes.root}>
       <CardMedia
@@ -70,25 +71,22 @@ export default function MediaCard({
         <div className={classes.details}>
           <CardContent className={classes.content}>
             <Typography component="h5" variant="h5">
-              {title} <Link alignmentBaseline="middle" color="primary" onClick={onClick} />
+              {title}
             </Typography>
+            <Box component="span" display="flex" alignItems="center">
+              <Link color="action" className={classes.linkIcon} />
+              <Typography
+                color="textSecondary"
+                variant="caption"
+                align="center"
+              >
+                {link}
+              </Typography>
+            </Box>
             <Typography variant="subtitle1" color="textSecondary">
               {desc}
             </Typography>
           </CardContent>
-        </div>
-        <div className={classes.controls}>
-          {onClick ? (
-            <CardActions>
-              <Typography
-                color="textSecondary"
-                variant="caption"
-              >{`${window.location.origin}${pathname}`}</Typography>
-              {/* <Button size="small" color="primary" onClick={onClick}>
-                Goto
-              </Button> */}
-            </CardActions>
-          ) : null}
         </div>
       </CardActionArea>
     </Card>

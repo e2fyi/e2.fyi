@@ -1,4 +1,4 @@
-import BarChart from "@material-ui/icons/BarChart";
+import Avatar from "@material-ui/core/Avatar";
 import Home from "@material-ui/icons/Home";
 import React from "react";
 
@@ -25,10 +25,38 @@ export const routes: Array<RouteProps> = [
     divider: true
   },
   {
-    title: "Vega-link",
+    title: "Vega-Link",
     image: "/vega.png",
     desc: "is a url generator to share interactive vis with Vega or Vega-Lite.",
     pathname: "/vega",
-    icon: <BarChart />
+    icon: <Avatar>V</Avatar>
+  },
+  {
+    title: "Minio-Web",
+    image: "/minio.png",
+    desc: "is a web server proxy for any S3-compatible storage.",
+    pathname: "/github/e2fyi/minio-web",
+    icon: <Avatar>M</Avatar>
+  },
+  {
+    title: "e2fyi-utils",
+    image: "/pypi.png",
+    desc: "Useful ease-of-use python helpers to interact with AWS resources.",
+    pathname: "/github/e2fyi/py-utils",
+    icon: <Avatar>P</Avatar>
+  },
+  {
+    title: "kfx",
+    image: "/pypi.png",
+    desc: "Extensions for kubeflow pipelines sdk.",
+    pathname: "/github/e2fyi/kfx",
+    icon: <Avatar>K</Avatar>
+  },
+  {
+    title: "Kubeflow-AWS",
+    image: "/kubeflow.jpg",
+    desc: "is a collection of kustomize manifest to deploy Kubeflow in AWS.",
+    pathname: "/github/e2fyi/kubeflow-aws",
+    icon: <Avatar>K</Avatar>
   }
 ];

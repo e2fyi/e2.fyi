@@ -33,7 +33,6 @@ export default function Toast({
     if (reason === "clickaway") {
       return;
     }
-    console.log("");
     setOpen(false);
   };
 
@@ -56,10 +55,6 @@ export default function Toast({
             title="reload app"
             color="inherit"
             size="small"
-            onClick={() => {
-              setOpen(false);
-              window.location.reload(true);
-            }}
           >
             <Refresh fontSize="inherit" />
           </IconButton>

@@ -4,9 +4,15 @@ import Sidebar from "../components/Sidebar";
 import store, { openDrawer, StoreState } from "../redux";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import VegaLinkPage from "./VegaLinkPage";
-import { Redirect, Route, Switch, useHistory } from "react-router-dom";
+import {
+  Redirect,
+  Route,
+  Switch,
+  useHistory
+} from "react-router-dom";
 import { routes } from "../lib/routes";
 import { useDispatch, useSelector } from "react-redux";
+import GithubPage from "./GithubPage";
 
 export default function Router() {
   const drawerOpened = useSelector<StoreState, boolean>(
@@ -31,6 +37,9 @@ export default function Router() {
         <Route path="/vega">
           <VegaLinkPage path="/vega" />
         </Route>
+        <Route path="/github/:githubOrg/:githubProject">
+          <GithubPage />
+        </Route>
         <Route path="/">
           <HomePage items={items} />
         </Route>
@@ -40,6 +49,7 @@ export default function Router() {
       </Switch>
 
       <SwipeableDrawer
+        anchor="right"
         open={drawerOpened}
         onOpen={() => dispatch(openDrawer(true))}
         onClose={() => dispatch(openDrawer(false))}
