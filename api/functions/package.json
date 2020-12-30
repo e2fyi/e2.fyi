@@ -21,7 +21,7 @@
     "firebase-admin": "^8.6.0",
     "firebase-functions": "^3.3.0",
     "lz-string": "^1.4.4",
-    "vega": "^5.9.1",
+    "vega": "^5.17.3",
     "vega-embed": "^6.3.2",
     "vega-lite": "^4.4.0",
     "vega-schema-url-parser": "^1.1.0"
